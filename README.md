@@ -45,7 +45,6 @@ export WEBSERV_ROOT=$PWD
 ```
 docker를 이용해서 윈도우나 리눅스 환경에서도 테스트 가능합니다.
 ```
-git switch docker // 도커 브랜치로 이동해야 합니다.
 docker compose up -d
 ```
 웹 브라우저로 127.0.0.1(포트 80)으로 접속하여 테스트할 수 있습니다.
