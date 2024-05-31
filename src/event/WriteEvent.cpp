@@ -16,10 +16,10 @@ void WriteEvent::handle()
 {
     int n;
 
-    n = write(mClientSocket, mMessage.c_str() + mWriteSize, mMessage.size() - mWriteSize);
+    n = send(mClientSocket, mMessage.c_str() + mWriteSize, mMessage.size() - mWriteSize, MSG_NOSIGNAL);
     if (n == -1)
     {
-        perror("writeEvent");
+        perror("sendEvent");
         close(mClientSocket);
         delete this;
         return;

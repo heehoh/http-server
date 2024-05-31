@@ -405,7 +405,7 @@ void ReadRequestEvent::makeCgiEvent(const LocationBlock &lb)
 void ReadRequestEvent::handle()
 {
     char buffer[BUFFER_SIZE];
-    int n = read(mClientSocket, buffer, BUFFER_SIZE);
+    int n = recv(mClientSocket, buffer, BUFFER_SIZE, MSG_NOSIGNAL);
     if (n <= 0)
     {
         Kqueue::deleteEvent(this, EVFILT_TIMER);
